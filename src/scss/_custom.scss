@@ -1,0 +1,24 @@
+// Here you can add other styles
+body {
+    background-color:#212121;
+}
+.card {
+    border: 1px solid #484848;
+    border-radius: 0.5rem;
+}
+.breadcrumb {
+    color:#f9f9f9;
+    background-color:#212121;
+    border-bottom: 1px solid #484848;
+}
+
+.breadcrumb-item + .breadcrumb-item:hover::before {
+    color:#f9f9f9;
+}
+
+.app-footer {
+    color:#f9f9f9;
+    background-color:#212121;
+    border-bottom: 1px solid #484848;
+}
+

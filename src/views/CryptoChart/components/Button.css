@@ -1,0 +1,13 @@
+.timespan_button {
+  padding: 5px 15px;
+  margin: 10px 5px;
+  background-color: #197a9e;
+  color: #FFF;
+  border-style: none;
+  border-radius:5px;
+}
+
+.timespan_button:hover {
+  background-color: #20a8d8;
+}
+

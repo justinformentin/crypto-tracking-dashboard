@@ -1,0 +1,43 @@
+.date_container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 70px;
+}
+
+
+.date_form {
+  margin-right: 100px;
+}
+
+.date_label {
+  display: inline-block;
+  text-align: right;
+  width: 50px;
+  margin: 0 10px;
+  color:#f9f9f9;
+}
+
+.date_customDate {
+  margin-bottom: 10px;
+}
+
+/* @media only screen and (min-width: 0px) and (max-width: 966px) {
+  .date_container {
+    flex-direction: column;
+    align-items: center;
+    margin: 0 0 10px 0;
+  }
+  .date_form {
+    margin: 10px 0;
+  }
+} */
+
+@media only screen and (min-width: 0px) and (max-width: 466px) {
+  .date_form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

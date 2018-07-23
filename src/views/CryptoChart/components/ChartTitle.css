@@ -1,0 +1,14 @@
+.crypto_title {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 70px;
+  color:#f9f9f9 !important;
+}
+
+@media only screen and (min-width: 0px) and (max-width: 966px) {
+  h2 {
+    font-size: 1.2em;
+  }
+}
