@@ -14,9 +14,6 @@ import {
   Row,
   } from 'reactstrap';
 
-import '../../App.css';
-
-
 class Bitcoin extends Component {
   state = {
   searchTerm: '',

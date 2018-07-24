@@ -29,14 +29,11 @@ class RedditResults extends Component {
 					<div className="news__reddit-item-content--bottom small-text">
 						<div className="news__reddit-comments-container">
 							<a className="news__reddit-item-link" href={result.data.url} target="_blank">
-								<i className="material-icons">forum</i>
+								<i className="icon-bubble"> </i>
 								{result.data.num_comments} COMMENTS
 							</a>
 						</div>
 						<div className="news__reddit-links-container">
-							<a className="news__reddit-item-link" href={result.data.url} target="_blank">
-								<i className="material-icons">link</i>LINK
-							</a>
 							<a
 								className={
 									// if subreddit name contains the chosenCryptoName, render the link green
@@ -48,7 +45,7 @@ class RedditResults extends Component {
 								target="_blank"
 								name={result.data.subreddit}
 							>
-								<i className="material-icons">open_in_new</i>SUBREDDIT
+								<i className="icon-login"></i>SUBREDDIT
 							</a>
 						</div>
 					</div>

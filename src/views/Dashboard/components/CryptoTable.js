@@ -3,7 +3,6 @@ import CryptoRows from './CryptoRows';
 import getAllTickers from '../helpers/getAllTickers';
 import sortStringData from '../helpers/sortStringData';
 import sortNumberData from '../helpers/sortNumberData';
-import '../../../App.css';
 
 class CryptoTable extends Component {
   state = {

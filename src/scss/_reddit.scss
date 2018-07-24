@@ -1,0 +1,228 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+/* --------------------
+CryptoNews
+-------------------- */
+.news__app-title {
+	color: white;
+	margin: 1em 0 0 5%;
+}
+
+.news__header-section {
+	align-items: center;
+	background-color: rgb(42, 54, 59);
+	display: flex;
+	margin: 2em 0 2em 0;
+	padding: 1em 0em 1em 0em;
+	width: 100%;
+}
+
+.news__icon-container--left {
+	margin-left: 5%;
+}
+
+.news__header-container-center {
+	color: rgb(82, 105, 117);
+	margin: 0 auto 0 auto;
+}
+
+.news__crypto-logo-name-container {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 0.5em;
+}
+
+.news__ticker-image {
+	align-self: center;
+	margin-right: 1em;
+	width: 40px;
+}
+
+/* Use a placeholder image when the crypto symbol image isnt found */
+.news__ticker-image:before {
+	background-image: url('https://placehold.it/40x40');
+	content: ' ';
+	display: block;
+	height: 40px;
+	position: absolute;
+	width: 40px;
+	z-index: 0;
+}
+
+.news__header-text {
+	color: white;
+}
+
+.news__reddit-list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	list-style-type: none;
+	margin: 0 auto 0 auto;
+	/* width: 100%; */
+}
+
+.news__reddit-item {
+	margin: 0em;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	/* border-radius:5px; */
+	width:100%;
+	
+}
+
+.news__reddit-item-content {
+	background: rgb(41, 47, 51);
+	border: solid rgb(133, 146, 151);
+	border-width: 1px 0px 1px 0px;
+	color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	/* height: 100px; */
+	/* border-radius: 10px !important; */
+	
+}
+
+.news__reddit-item-content--top {
+	display: flex;
+	/* padding: 1em; */
+}
+
+.news__reddit-item-thumbnail {
+	margin-right: 0.5em;
+	object-fit: cover;
+	width: 70px;
+	height: 70px;
+}
+
+.news__reddit-item-title-text {
+	color: white;
+	text-decoration: none;
+	padding:.5em .5em .5em 0em;
+}
+
+.news__reddit-item-content--bottom {
+	align-items: center;
+	display: flex;
+	border-top: 1px solid rgb(133, 146, 151);
+	color: rgb(133, 146, 151);
+	justify-content: space-between;
+	padding: 0.5em;
+}
+
+.news__reddit-comments-container {
+	align-items: center;
+	display: flex;
+}
+
+.news__reddit-links-container {
+	display: flex;
+}
+
+.news__reddit-item-link {
+	align-items: center;
+	color: rgb(133, 146, 151);
+	display: flex;
+	margin-left: 0.5em;
+	text-decoration: none;
+}
+
+/* --------------------
+REUSABLE STYLES
+-------------------- */
+.rotate-90 {
+	transform: rotate(90deg);
+}
+
+.center-text {
+	text-align: center;
+}
+
+.green-text {
+	color: #76ff72;
+}
+
+.white-text {
+	color: white;
+}
+
+.float-left {
+	float: left;
+}
+
+.float-right {
+	float: right;
+}
+
+.opaque {
+	opacity: 0;
+}
+
+.red-text {
+	color: #ff7272;
+}
+
+.regular-green {
+	color: green;
+}
+
+.small-text {
+	font-size: 80%;
+}
+
+/* --------------------
+MEDIA QUERIES
+-------------------- */
+/* ipad */
+@media (max-width: 1024px) {
+	.hide-on-ipad {
+		display: none;
+	}
+}
+
+/* tablet */
+@media (max-width: 800px) {
+	.hide-on-tablet {
+		display: none;
+	}
+
+	.news__reddit-item-content {
+		height: 175px;
+		width: 400px;
+	}
+}
+
+/* cell phones */
+@media (max-width: 400px) {
+	.hide-on-phone {
+		display: none;
+	}
+
+	.news__app-title {
+		font-size: 1.5em;
+		margin-top: 0.5em;
+	}
+
+	.news__header-section {
+		margin: 1em 0 1em 0;
+	}
+
+	.news__icon-container--right {
+		width: auto;
+	}
+
+	.news__reddit-item {
+		margin: 0.5em;
+	}
+
+	.news__reddit-item-content {
+		height: 230px;
+		width: 300px;
+	}
+}

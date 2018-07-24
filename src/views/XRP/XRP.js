@@ -14,8 +14,6 @@ import {
   Col
   } from 'reactstrap';
 
-import '../../App.css';
-
 class XRP extends Component {
   // if user visits 'cryptoNews' or 'cryptoChart' pages the default chosen crypto asset is Bitcoin
   state = {

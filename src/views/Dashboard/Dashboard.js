@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import SearchBar from './components/SearchBar';
 import CryptoTable from './components/CryptoTable';
-import '../../App.css';
 
 class Dashboard extends Component {
   // if user visits 'cryptoNews' or 'cryptoChart' pages the default chosen crypto asset is Bitcoin

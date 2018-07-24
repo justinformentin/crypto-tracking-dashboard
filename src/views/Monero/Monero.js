@@ -14,8 +14,6 @@ import {
   Col
   } from 'reactstrap';
 
-import '../../App.css';
-
 class Monero extends Component {
   state = {
   searchTerm: '',

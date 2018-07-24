@@ -14,8 +14,6 @@ import {
   Row
   } from 'reactstrap';
 
-import '../../App.css';
-
 class Ethereum extends Component {
   // if user visits 'cryptoNews' or 'cryptoChart' pages the default chosen crypto asset is Bitcoin
   state = {
