@@ -66,7 +66,7 @@ const PriceChart = props => (
               dot={false}
             />
           </AreaChart>
-        <ResponsiveContainer>  
+        </ResponsiveContainer>  
       )}
     </div>
   </div>
