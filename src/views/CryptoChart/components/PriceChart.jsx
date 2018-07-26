@@ -1,5 +1,5 @@
 import React from 'react';
-import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
+import { ResponsiveContainer, AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
 import ChartTitle from './ChartTitle';
 import DateRange from './DateRange';
 import ErrorMessage from './ErrorMessage';
