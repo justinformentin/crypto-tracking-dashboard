@@ -2,7 +2,7 @@
 
 https://cryptocoincrunch.com
 
-This is a cryptocurrency tracking dashboard that has only necessary components. 
+This is a cryptocurrency tracking dashboard that has only few, necessary components to track crypto prices. 
 
 Yes, there are thousands of dashboards already in existance, but I wanted to make my own to be in control of the functionality.
 
