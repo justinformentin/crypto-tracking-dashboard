@@ -10,32 +10,13 @@ import {
 	CardBody,
 	CardColumns,
   CardHeader,
+  Col,
   Row,
-  Col
   } from 'reactstrap';
 
-class XRP extends Component {
-  // if user visits 'cryptoNews' or 'cryptoChart' pages the default chosen crypto asset is Bitcoin
+class CryptoDetails extends Component {
   state = {
   searchTerm: '',
-  chosenCryptoName: 'XRP',
-  chosenCryptoSymbol: 'XRP',
-  currCrypto: 'XRP'
-  };
-
-  // the term entered into 'searchBar' component
-  handleSearchTerm = searchTerm => {
-  this.setState({ searchTerm: searchTerm });
-  };
-
-  // when 'news' arrow is clicked for a crypto asset, change 'chosenCryptoName' state
-  handleChosenCryptoName = chosenCryptoName => {
-  this.setState({ chosenCryptoName: chosenCryptoName });
-  };
-
-  // when 'news' arrow is clicked for a crypto asset, change 'chosenCryptoSymbol' state
-  handleChosenCryptoSymbol = chosenCryptoSymbol => {
-  this.setState({ chosenCryptoSymbol: chosenCryptoSymbol });
   };
 
   render() {
@@ -52,13 +33,16 @@ class XRP extends Component {
                 <CardBody>
                   <Row>
                     <Col>
-                    <CryptoChart />
+                    <CryptoChart 
+                      name={this.props.name} 
+                      symbol={this.props.symbol} 
+                    />
                     </Col>
                   </Row>
                 </CardBody>
               </Card>
             </Col>
-          </Row>          
+          </Row>
 					<CardColumns className="cols-2">
 						<Card>
 							<CardHeader>Reddit </CardHeader>
@@ -67,8 +51,8 @@ class XRP extends Component {
 									style={{ height: 405 }}>
 									<div>
 										<CryptoNews
-											chosenCryptoName={this.state.chosenCryptoName}
-											chosenCryptoSymbol={this.state.chosenCryptoSymbol}
+											chosenCryptoName={this.props.name}
+											chosenCryptoSymbol={this.props.symbol}
 										/>
 									</div>	
 								</Scrollbars>	
@@ -78,7 +62,7 @@ class XRP extends Component {
 							<Timeline
 								dataSource={{
 									sourceType: 'profile',
-									screenName: 'ripple'                
+									screenName: this.props.twitterScreenname               
 								}}
 								options={{
 									theme: 'dark',
@@ -98,4 +82,4 @@ class XRP extends Component {
   }
 }
 
-export default XRP;
+export default CryptoDetails;

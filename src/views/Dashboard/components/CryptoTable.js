@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import CryptoRows from './CryptoRows';
-import getAllTickers from '../helpers/getAllTickers';
+import { getAllTickers } from '../../../utils/api/cmcApi';
 import sortStringData from '../helpers/sortStringData';
 import sortNumberData from '../helpers/sortNumberData';
 
+// TODO: I'd consider this a container since we're doing an api call here. Move this to containers.
 class CryptoTable extends Component {
   state = {
     tickers: []

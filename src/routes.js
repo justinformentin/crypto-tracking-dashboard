@@ -12,39 +12,19 @@ const Dashboard = Loadable({
   loading: Loading,
 });
 
-const Bitcoin = Loadable({
-  loader: () => import('./views/Bitcoin/Bitcoin'),
-  loading: Loading,
-});
-
-const Ethereum = Loadable({
-  loader: () => import('./views/Ethereum/Ethereum'),
-  loading: Loading,
-});
-
-const Litecoin = Loadable({
-  loader: () => import('./views/Litecoin/Litecoin'),
-  loading: Loading,
-});
-
-const Monero = Loadable({
-  loader: () => import('./views/Monero/Monero'),
-  loading: Loading,
-});
-
-const XRP = Loadable({
-  loader: () => import('./views/XRP/XRP'),
+const CryptoDetails = Loadable({
+  loader: () => import('./views/CryptoDetails/CryptoDetails'),
   loading: Loading,
 });
 
 const routes = [
   { path: '/', exact: true, name: 'Home', component: DefaultLayout },
   { path: '/dashboard', name: 'Dashboard', component: Dashboard },
-  { path: '/bitcoin', name: 'Bitcoin', component: Bitcoin },
-  { path: '/ethereum', name: 'Ethereum', component: Ethereum },
-  { path: '/litecoin', name: 'Litecoin', component: Litecoin },
-  { path: '/monero', name: 'Monero', component: Monero },
-  { path: '/ripple', name: 'XRP', component: XRP },
+  { path: '/bitcoin', name: 'Bitcoin', symbol: 'BTC', twitterScreenname: 'bitcoin', component: CryptoDetails },
+  { path: '/ethereum', name: 'Ethereum', symbol: 'ETH', twitterScreenname: 'ethereum', component:  CryptoDetails },
+  { path: '/litecoin', name: 'Litecoin', symbol: 'LTC', twitterScreenname: 'litecoin', component:  CryptoDetails },
+  { path: '/monero', name: 'Monero', symbol: 'XMR', twitterScreenname: 'monero', component:  CryptoDetails },
+  { path: '/ripple', name: 'XRP', symbol: 'XRP', twitterScreenname: 'ripple', component:  CryptoDetails },
 
 ];
 

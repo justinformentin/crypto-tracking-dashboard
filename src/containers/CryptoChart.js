@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import moment from 'moment';
-import PriceChart from '../../CryptoChart/components/PriceChart';
+import PriceChart from '../components/PriceChart';
+import { getData } from '../utils/api/poloniexApi';
+import PropTypes from 'prop-types';
 
 /**
-* @class Container
+* @class CryptoChart
 * @description Handles application wide logic and state management.
 */
 
-class Container extends Component {
+class CryptoChart extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -20,11 +22,11 @@ class Container extends Component {
       chartWidth: 966,
       chartHeight: 458,
       currCrypto: {
-        name: 'Litecoin',
-        symbol: 'LTC',
+        name: this.props.name,
+        symbol: this.props.symbol,
       },
       cryptos: [
-        { name: 'Litecoin', symbol: 'LTC' },
+        { name: this.props.name, symbol: this.props.symbol},
       ],
     };
   }
@@ -33,7 +35,10 @@ class Container extends Component {
     this.setSize();
     window.onresize = this.setSize;
     const timeRange = this.getTimeRange();
-    this.getData(timeRange);
+    this.setState({
+      ...this.state,
+      ...getData(timeRange)
+    });
   }
 
 /**
@@ -55,44 +60,6 @@ class Container extends Component {
     } else if (window.innerWidth < 530) {
       this.setState({ chartWidth: 350, chartHeight: 150.5 });
     }
-  }
-
-  /**
-  * @function getData
-  * @param {object} payload
-  * @description Fetches price history data from Poloniex API and invokes setState with new data.
-  */
-
-  async getData(payload) {
-    // variables required to fetch price data
-    const { symbol } = this.state.currCrypto;
-    const { start, end, period, timeRange } = payload;
-    // format start and end dates to unix timestamp for API request
-    const startUnix = start.unix();
-    const endUnix = end.unix();
-    // format start and end dates to domString for HTML5 date input
-    const startString = start.format('YYYY-MM-DD');
-    const endString = end.format('YYYY-MM-DD');
-
-    // fetch price priceData from Poloniex API, passing in appropriate start, end and period values
-    const url = `https://poloniex.com/public?command=returnChartData&currencyPair=USDT_${symbol}&start=${startUnix}&end=${endUnix}&period=${period}`
-    const response = await fetch(url);
-    const json = await response.json();
-    // parse json to only include values we need (closing price, date and label for XAxis ticks)
-    const priceData = json.map((item) => {
-      const { date } = item;
-      // format closing price to include only 4 decimals
-      const close = +item.close.toFixed(4);
-      // get label for XAxis ticks based on whether timeRange is a year, a month, a week or a day
-      return { 'Price (USD)': close, date };
-    });
-    this.setState({
-      priceData,
-      startDate: startString,
-      endDate: endString,
-      invalidDateRange: false,
-      timeRange,
-    });
   }
 
   /**
@@ -184,7 +151,10 @@ class Container extends Component {
     // calculate new time range with new start date
     const timeRange = this.getTimeRange(startDate, endDate);
     // invoke getData() with new time range to get new price data
-    this.getData(timeRange);
+    this.setState({
+      ...this.state,
+      ...getData(timeRange)
+    })
   }
 
   /**
@@ -203,7 +173,10 @@ class Container extends Component {
     const timeRange = this.getTimeRange(startDate, endDate);
     this.setState({ activeBtnLabel: '' });
     // invoke getData() with new time range to get new price data
-    this.getData(timeRange);
+    this.setState({
+      ...this.state,
+      ...getData(timeRange)
+    })
   }
 
   /**
@@ -255,10 +228,12 @@ class Container extends Component {
     // change currCrypto to the one user clicked on and reset active button in this.state
     // after setState has finished and these variables have been changed,
     // invoke getData() to fetch new priceData from API
-    this.setState(
-      { currCrypto: { name, symbol }, activeBtnLabel: '1y' },
-      () => this.getData(timeRange)
-    );
+    this.setState({
+      ...this.state,
+      currCrypto: { name, symbol }, 
+      activeBtnLabel: '1y',
+      ...this.getData(timeRange)
+    });
   }
 
   render() {
@@ -290,4 +265,9 @@ class Container extends Component {
   }
 }
 
-export default Container;
+CryptoChart.propTypes = {
+  name: PropTypes.string,
+  symbol: PropTypes.string
+}
+
+export default CryptoChart;
