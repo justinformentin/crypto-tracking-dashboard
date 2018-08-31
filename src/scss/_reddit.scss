@@ -20,7 +20,7 @@ CryptoNews
 	padding: 1em 0em 1em 0em;
 	width: 100%;
 }
-
+ 
 .news__icon-container--left {
 	margin-left: 5%;
 }
@@ -28,13 +28,6 @@ CryptoNews
 .news__header-container-center {
 	color: rgb(82, 105, 117);
 	margin: 0 auto 0 auto;
-}
-
-.news__crypto-logo-name-container {
-	align-items: center;
-	display: flex;
-	justify-content: center;
-	margin-bottom: 0.5em;
 }
 
 .news__ticker-image {
@@ -77,7 +70,6 @@ CryptoNews
 }
 
 .news__reddit-item-content {
-	background: rgb(41, 47, 51);
 	border: solid rgb(133, 146, 151);
 	border-width: 1px 0px 1px 0px;
 	color: white;
@@ -91,7 +83,6 @@ CryptoNews
 
 .news__reddit-item-content--top {
 	display: flex;
-	/* padding: 1em; */
 }
 
 .news__reddit-item-thumbnail {
@@ -116,15 +107,6 @@ CryptoNews
 	padding: 0.5em;
 }
 
-.news__reddit-comments-container {
-	align-items: center;
-	display: flex;
-}
-
-.news__reddit-links-container {
-	display: flex;
-}
-
 .news__reddit-item-link {
 	align-items: center;
 	color: rgb(133, 146, 151);
@@ -140,41 +122,10 @@ REUSABLE STYLES
 	transform: rotate(90deg);
 }
 
-.center-text {
-	text-align: center;
-}
-
-.green-text {
-	color: #76ff72;
-}
-
-.white-text {
-	color: white;
-}
-
-.float-left {
-	float: left;
-}
-
-.float-right {
-	float: right;
-}
-
-.opaque {
-	opacity: 0;
-}
-
-.red-text {
-	color: #ff7272;
-}
-
 .regular-green {
 	color: green;
 }
 
-.small-text {
-	font-size: 80%;
-}
 
 /* --------------------
 MEDIA QUERIES

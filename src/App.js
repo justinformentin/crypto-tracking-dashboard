@@ -1,28 +1,73 @@
 import React, { Component } from 'react';
-import { HashRouter, Route, Switch } from 'react-router-dom';
-// Styles
-// CoreUI Icons Set
-import '@coreui/icons/css/coreui-icons.min.css';
-// Import Flag Icons Set
-import 'flag-icon-css/css/flag-icon.min.css';
-// Import Font Awesome Icons Set
-import 'font-awesome/css/font-awesome.min.css';
-// Import Simple Line Icons Set
-import 'simple-line-icons/css/simple-line-icons.css';
-// Import Main styles for this application
-import './scss/style.css'
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import HeaderBar from './components/HeaderBar';
+import SearchBar from './components/SearchBar';
+import CryptoTable from './containers/CryptoTable';
+import CryptoNews from './containers/CryptoNews';
+import "./scss/style.css";
 
-// Containers
-import { DefaultLayout } from './containers';
 
 class App extends Component {
+  // if user visits 'CryptoNews' pages the default chosen crypto asset is Bitcoin
+  state = {
+    searchTerm: '',
+    chosenCryptoName: 'Bitcoin',
+    chosenCryptoSymbol: 'BTC'
+  };
+
+  // the term entered into 'searchBar' component
+  handleSearchTerm = searchTerm => {
+    this.setState({ searchTerm: searchTerm });
+  };
+
+  // when 'news' arrow is clicked for a crypto asset, change 'chosenCryptoName' state
+  handleChosenCryptoName = chosenCryptoName => {
+    this.setState({ chosenCryptoName: chosenCryptoName });
+  };
+
+  // when 'news' arrow is clicked for a crypto asset, change 'chosenCryptoSymbol' state
+  handleChosenCryptoSymbol = chosenCryptoSymbol => {
+    this.setState({ chosenCryptoSymbol: chosenCryptoSymbol });
+  };
+
   render() {
     return (
-      <HashRouter>
-        <Switch>
-          <Route path="/" name="Home" component={DefaultLayout} />
-        </Switch>
-      </HashRouter>
+      <div>	
+        <BrowserRouter>
+          <Switch>
+            <Route
+              exact
+              path="/"
+              render={props => (                
+                <div className="main-container">
+				  <HeaderBar />
+                  <SearchBar
+                    className={'hide-on-ipad'}
+                    searchTerm={this.state.searchTerm}
+                    handleSearchTerm={this.handleSearchTerm}
+                  />
+                  <CryptoTable
+                    searchTerm={this.state.searchTerm}
+                    handleChosenCryptoName={this.handleChosenCryptoName}
+                    handleChosenCryptoSymbol={this.handleChosenCryptoSymbol}
+                  />
+                </div>
+              )}
+            />
+            <Route
+              path="/news"
+              render={props => (
+                <div>
+                  <CryptoNews
+                    chosenCryptoName={this.state.chosenCryptoName}
+                    chosenCryptoSymbol={this.state.chosenCryptoSymbol}
+                  />
+                </div>
+              )}
+            />
+          </Switch>
+        </BrowserRouter>
+      </div>	
     );
   }
 }
