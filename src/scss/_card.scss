@@ -1,0 +1,52 @@
+@import "variables";
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: $light-grey;
+    background-clip: border-box;
+    border: $light-border;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem; 
+  }
+  
+  .card-body {
+    flex: 1 1 auto;
+    padding: 1.25rem; 
+  }
+  
+  .card-title {
+    margin-bottom: 0.75rem; 
+  }
+  
+  .card-header {
+    padding: 1rem 1.25rem;
+    margin-bottom: 0;
+    font-size:2.5vh;
+    font-weight:500;
+    line-height:21px;
+    color: $white;
+    background-color: $light-grey;
+    border-bottom: $light-border; 
+  }
+  
+  .card-columns .card {
+    margin-bottom: 0.75rem; 
+  }
+  
+  @media (min-width: 576px) {
+    .card-columns {
+      column-count: 3;
+      column-gap: 1.25rem;
+      orphans: 1;
+      widows: 1; 
+    }
+      .card-columns .card {
+        display: inline-block;
+        width: 100%; 
+      } 
+  }
+  

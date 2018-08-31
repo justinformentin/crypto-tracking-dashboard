@@ -26,11 +26,10 @@ npm run build
 
 * [ ] Add streaming Twitter component. *In Progress*
 * [ ] Add portfolio *In Progress*
-* [ ] Add some news RSS feeds.
-* [ ] Add user registration/login to save customizations.
-* [ ] Add more coin pages.
-* [ ] Simplify Chart component.
-* [ ] Clean up styling.
+* [X] Add some news RSS feeds.
+~~* [ ] Add more coin pages.~~
+* [X] Simplify Chart component.
+* [ ] Simplify styling, styled components.
 
 #### Uses:
 [Axios](https://github.com/axios/axios)
@@ -43,7 +42,16 @@ npm run build
 
 [React Twitter Widget](https://github.com/andrewsuzuki/react-twitter-widgets)
 
+[CoinMarketCap](https://coinmarketcap.com/api/)
+
+[Reddit](https://www.reddit.com/dev/api)
+
+[CryptoCompare](https://www.cryptocompare.com/api/)
 
 ![Coin Graph](img/coingraph.jpg?raw=true "Coin Graph")
 
 ![Coin Chart](img/coinchart.jpg?raw=true "Coin Chart")
+
+
+
+

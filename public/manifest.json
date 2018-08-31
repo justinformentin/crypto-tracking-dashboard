@@ -1,11 +1,11 @@
 {
-  "short_name": "CryproCoinCrunch",
-  "name": "CryproCoinCrunch",
+  "short_name": "cryptodash",
+  "name": "Cryptocurrency Tracking Dashboard",
   "icons": [
     {
-      "src": "./assets/favicon.png",
-      "sizes": "100x100",
-      "type": "image/png"
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
     }
   ],
   "start_url": "./index.html",
