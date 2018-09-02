@@ -22,6 +22,10 @@ npm run build
 ```
 
 **This is a work in progress.** 
+#### Bugs
+
+* [ ] Some coin news pages don't work currently. Due to the nature of twitter usernames, some names are different from the actual currency name. For example, Bitcoin Cash's username is "bitco1ncash". This causes an error to be thrown when clicking on the news arrow because it is trying to pass "bitcoin cash" as the prop. Similar errors occur with a few other coins.
+
 #### To Do
 
 * [ ] Add streaming Twitter component. *In Progress*
